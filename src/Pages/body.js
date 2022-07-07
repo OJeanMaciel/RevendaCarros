@@ -7,7 +7,7 @@ function Body() {
   
     const sendGetRequest = async () => {
         try {
-            const resp = await axios.get('https://viacep.com.br/ws/01001000/json/');
+            const resp = await axios.get('https://jkflix.herokuapp.com/carros');
             console.log(resp.data);
         } catch (err) {
             // Handle Error Here
