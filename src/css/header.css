@@ -1,12 +1,38 @@
-.container {
+.navbar {
     background-color: red;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 1em;
 }
 
 .logo {
     background-color: red;
-    height: 25px;
+    height: 45px;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: red;
+}
+
+.item {
+    margin-right: 1em;
+    background-color: red;
+    color: #fff;
+    font-size: 20px;
+}
+
+.item_link {
+    background-color: red;
+    color: #fff;
+    text-decoration:none;
+}
+
+.item a:hover {
+    color: 	#005b96;
+    text-decoration: none;
 }

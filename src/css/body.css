@@ -1,0 +1,39 @@
+.lista{
+    text-align: center;
+    margin: 50px;
+}
+
+.cards { 
+    margin: 35px;
+    justify-content: center;
+    background-color: #dfe9ee;
+
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    border: 1px solid ;
+    border-radius: 20px;
+
+}
+
+h1{
+    margin: 35px;
+}
+
+.carroimg {
+    height: 200px;
+    border-radius: 25px;
+}
+
+.section{
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    border: 2px solid ;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.subTitle {
+    font-size: 20px;
+}
