@@ -3,28 +3,26 @@ import '../css/body.css';
 import img from '../img/cars/0.jpg';
 
 class BodyApp extends React.Component {
-
-        state = {
-            carros: []
-        };
-        
+    
+    
+    state = {
+        carros: []
+    };
+    
     componentDidMount() {
         fetch('https://jkflix.herokuapp.com/carros')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    carros: res,
-                });
+        .then(res => res.json())
+        .then(res => {
+            this.setState({
+                carros: res,
             });
-        }
-
-        // Toyota, VW, Ford, Fiat
-
-        render() {
+        });
+    }
+    
+    render() {
 
             let marcas = <p>Carregando...</p>
-            
-            
+
             marcas = [].concat(this.state.carros)
             .sort((a, b) => a.marca_nome > b.marca_nome ? 1 : -1)
             .map((item, i) => 
@@ -44,7 +42,7 @@ class BodyApp extends React.Component {
         return (
             <div className='lista'>
                 <h1>Encontre as melhores marcas!</h1>
-                    <div className='section_marcas'>
+                    <div className='section'>
                         {marcas} 
                     </div>
             </div>
