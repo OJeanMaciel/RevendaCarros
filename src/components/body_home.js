@@ -17,9 +17,8 @@ class BodyHome extends React.Component {
                 });
             });
         }
-        // <p><b><img src={`"../img/Cars/"${this.item.id}`} className="carroimg"/></b></p>
-        render() {
 
+        render() {
             
             let recente = <p>Carregando...</p>
             

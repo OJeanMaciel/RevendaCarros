@@ -18,33 +18,35 @@ class BodyApp extends React.Component {
             });
         }
 
-        
+        // Toyota, VW, Ford, Fiat
 
         render() {
 
             let marcas = <p>Carregando...</p>
             
-            if (this.state.carros) {
-                marcas = (<ul>
-                {this.state.carros.map(item => (
-                    <ul className='cards' key={item.id}>
-                        <p><b><img src={img} className="carroimg"/></b></p>
-                        <p><b>Marca:</b> {item.marca_nome}</p>
-                        <p><b>Nome:</b> {item.nome_modelo}</p>
-                        <p><b>Ano:</b> {item.ano}</p>
-                        <p><b>Combustivel:</b> {item.combustivel}</p>
-                        <p><b>Portas:</b> {item.num_portas}</p>
-                        <p><b>Cor:</b> {item.cor}</p>
-                        <p><b>Valor da Fipe:</b> {item.valor_fipe}</p>
-                    </ul>
-                ))};
-            </ul>)
-        }
-        
+            
+            marcas = [].concat(this.state.carros)
+            .sort((a, b) => a.marca_nome > b.marca_nome ? 1 : -1)
+            .map((item, i) => 
+                <div key={i}> 
+                <ul className='cards' key={item.id}>
+                <p><b><img src={img} className="carroimg"/></b></p>
+                <p><b>Marca:</b> {item.marca_nome}</p>
+                <p><b>Nome:</b> {item.nome_modelo}</p>
+                <p><b>Ano:</b> {item.ano}</p>
+                <p><b>Combustivel:</b> {item.combustivel}</p>
+                <p><b>Portas:</b> {item.num_portas}</p>
+                <p><b>Cor:</b> {item.cor}</p>
+                <p><b>Valor da Fipe:</b> {item.valor_fipe}</p>
+                </ul>
+                </div>
+            );
         return (
             <div className='lista'>
-                <h1>Encontre aqui as melhores marcas!</h1>
-                {marcas}
+                <h1>Encontre as melhores marcas!</h1>
+                    <div className='section_marcas'>
+                        {marcas} 
+                    </div>
             </div>
         );
     }

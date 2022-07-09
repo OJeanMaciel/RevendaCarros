@@ -13,7 +13,6 @@
     padding: 5px;
     border: 1px solid ;
     border-radius: 20px;
-
 }
 
 h1{
@@ -36,4 +35,11 @@ h1{
 
 .subTitle {
     font-size: 20px;
+}
+
+.section_marcas {
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: auto;
+    align-items: center;
 }
