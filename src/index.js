@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
+import { createRoot } from 'react-dom/client';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from '../src/pages/app';
 import Home from '../src/pages/home';
 import Form from '../src/pages/form';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+
+root.render(
   <BrowserRouter>
   <Routes>
       <Route path="/" exact element={<Home />} />
@@ -16,5 +18,5 @@ ReactDOM.render(
       </Routes>
   </BrowserRouter>,
   document.getElementById('root')
-);
-
+  
+  );

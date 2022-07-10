@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/body.css';
+import '../css/form.css';
 import BodyForm from '../components/body_form';
 import Headers from '../components/headers';
 
