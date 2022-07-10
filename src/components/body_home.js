@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/body.css';
 import img from '../img/cars/0.jpg';
+import LogoMarcas from '../img/Marcas.png';
 
 class BodyHome extends React.Component {
 
@@ -84,7 +85,7 @@ class BodyHome extends React.Component {
         
         return (
             <div className='lista'>
-                <h1>Home Page!</h1>
+                <img src={LogoMarcas}></img>
                     <h3 className='subTitle'>Novos Carros em estoque</h3>
                 <div className='section'>
                     {recente}

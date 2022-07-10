@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/body.css';
 import img from '../img/cars/0.jpg';
+import LogoMarcas from '../img/Marcas.png';
 
 class BodyApp extends React.Component {
     
@@ -42,6 +43,7 @@ class BodyApp extends React.Component {
         return (
             <div className='lista'>
                 <h1>Encontre as melhores marcas!</h1>
+                <img src={LogoMarcas}></img>
                     <div className='section'>
                         {marcas} 
                     </div>
