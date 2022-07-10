@@ -7,9 +7,10 @@ class BodyHome extends React.Component {
         state = {
             carros: []
         };
-        
+    
+    //https://wswork.com.br/cars.json - Quando tento usar a API de vocês dá erro de CORS. Subi para o Heroku o JSON
     componentDidMount() {
-        fetch('https://jkflix.herokuapp.com/carros')
+        fetch('https://jkflix.herokuapp.com/carros') 
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -24,7 +25,7 @@ class BodyHome extends React.Component {
             
         recente = [].concat(this.state.carros)
         .sort((a, b) => a.timestamp_cadastro > b.timestamp_cadastro ? 1 : -1)
-        .splice(0,5)
+        .slice(0,5)
         .map((item, i) => 
             <div key={i}> 
             <ul className='cards' key={item.id}>
@@ -41,10 +42,10 @@ class BodyHome extends React.Component {
         );
 
         let antigos = <p>Carregando...</p>
-                  
+
             antigos = [].concat(this.state.carros)
                 .sort((a, b) => a.ano > b.ano ? 1 : -1)
-                .splice(0,3)
+                .filter(antigos => antigos.ano <= 2005)
                 .map((item, i) => 
                     <div key={i}> 
                     <ul className='cards' key={item.id}>
@@ -64,7 +65,7 @@ class BodyHome extends React.Component {
               
             promoções = [].concat(this.state.carros)
             .sort((a, b) => a.valor_fipe > b.valor_fipe ? 1 : -1)
-            .splice(0,3)
+            .slice(0,3)
             .map((item, i) => 
                 <div key={i}> 
                 <ul className='cards' key={item.id}>
@@ -84,11 +85,11 @@ class BodyHome extends React.Component {
         return (
             <div className='lista'>
                 <h1>Home Page!</h1>
-                    <h3 className='subTitle'>Carros recém cadastrados</h3>
+                    <h3 className='subTitle'>Novos Carros em estoque</h3>
                 <div className='section'>
                     {recente}
                 </div>
-                    <h3 className='subTitle'>Carros antigos</h3>
+                    <h3 className='subTitle'>Carros abaixo de 2005</h3>
                 <div className='section'>
                     {antigos}
                 </div>
