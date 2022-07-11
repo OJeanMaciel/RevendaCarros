@@ -41,8 +41,6 @@ function Carro(){
               valor_fipe: values.valor_fipe,
               cor: values.cor,
               timestamp_cadastro: values.timestamp_cadastro,
-              id: 18,
-              marca_id: 1,
             })
               .then(() => {
                 console.log('Cadastrou com Sucesso!');             
