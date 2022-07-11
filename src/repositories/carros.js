@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../config/index';
 
 const URL_CARROS = `${config.URL_BACKEND}/carros`;
 

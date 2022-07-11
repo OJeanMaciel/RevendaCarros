@@ -1,15 +1,26 @@
 import React from 'react';
-import '../css/form.css';
-import Headers from '../components/headers';
-import carrosRepository from '../repositories/carros';
-import Button from '../components/button';
-import FormField from '../components/FormField';
-import useForm from '../hooks/useForm';
 import { useNavigate  } from 'react-router-dom';
+import Headers from '../components/headers';
+import useForm from '../hooks/useForm';
+import FormField from '../components/FormField';
+import Button from '../components/button';
+import carrosRepository from '../repositories/carros';
+import '../css/form.css';
+import Home from './home';
 
-function Form(){
-    const navigate = useNavigate ();    
+function Carro(){
+    const navigate = useNavigate (<Home />);    
     const { handleChange, values } = useForm({
+      marca_nome: 'Chevrolet',
+      nome_modelo: 'Celta',
+      ano: 2002,
+      combustivel: 'Flex',
+      num_portas: 4,
+      valor_fipe: 12,
+      cor: 'Azul',
+      timestamp_cadastro: 1836636350,
+      id: 18,
+      marca_id: 1,
     });
       return (
         <div>
@@ -30,7 +41,7 @@ function Form(){
               valor_fipe: values.valor_fipe,
               cor: values.cor,
               timestamp_cadastro: values.timestamp_cadastro,
-              id: 1,
+              id: 18,
               marca_id: 1,
             })
               .then(() => {
@@ -105,4 +116,4 @@ function Form(){
       );
     }
   
-export default Form;
+export default Carro;

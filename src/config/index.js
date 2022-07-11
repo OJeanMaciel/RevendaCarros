@@ -1,5 +1,5 @@
 const URL_BACKEND = window.location.hostname.includes('localhost')
-? 'http://localhost:3000'
+? 'http://localhost:8080'
 : 'https://jkflix.herokuapp.com';
 
 export default {

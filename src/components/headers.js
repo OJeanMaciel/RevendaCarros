@@ -15,7 +15,7 @@ function Header() {
           </Link>
         </li>
         <li className='item'>
-          <Link className='item_link' to="/form">
+          <Link className='item_link' to="/carro">
           Cadastre seu Carro
           </Link>
         </li>
