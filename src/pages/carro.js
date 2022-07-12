@@ -5,11 +5,13 @@ import useForm from '../hooks/useForm';
 import FormField from '../components/FormField';
 import Button from '../components/button';
 import carrosRepository from '../repositories/carros';
+import Footer from '../components/footer';
 import '../css/form.css';
-import Home from './home';
 
 function Carro(){
-    const navigate = useNavigate (<Home />);    
+    const navigate = useNavigate ('/');
+    const date = new Date().toLocaleString();
+    
     const { handleChange, values } = useForm({
       marca_nome: 'Chevrolet',
       nome_modelo: 'Celta',
@@ -22,12 +24,13 @@ function Carro(){
       id: 18,
       marca_id: 1,
     });
+
       return (
         <div>
             <Headers />
 
-          <h1>Cadastro de carros</h1>
-  
+          <h1 className='container_form_h1'>Cadastre seu veículo</h1>
+
           <form onSubmit={(event) => {
             event.preventDefault();
             alert('Carro Cadastrado com Sucesso!');
@@ -40,7 +43,7 @@ function Carro(){
               num_portas: values.num_portas,
               valor_fipe: values.valor_fipe,
               cor: values.cor,
-              timestamp_cadastro: values.timestamp_cadastro,
+              timestamp_cadastro: values.date,
             })
               .then(() => {
                 console.log('Cadastrou com Sucesso!');             
@@ -96,21 +99,15 @@ function Carro(){
             value={values.cor}
             onChange={handleChange}
           />
-  
-          <FormField
-            label="Dia do cadastro"
-            name="timestamp_cadastro"
-            value={values.timestamp_cadastro}
-            onChange={handleChange}
-          />
-  
-          <Button type="submit">
-            Cadastrar
-          </Button>
-  
-  
+
+          <h1 className='container_form_h1'>
+            <Button className='form_control_button' type="submit">
+              Cadastrar
+            </Button>
+          </h1>
           </form>
-            </div>
+          <Footer />
+         </div>
       );
     }
   

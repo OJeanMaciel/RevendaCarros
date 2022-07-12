@@ -2,14 +2,12 @@ import styled from 'styled-components';
 //import { Link } from 'react-router-dom';
 
 const Button = styled.button`
-padding: .7em;
-border-radius: 8px;
-background-color: gray;
-color: white;
 
-
-background-color: rgb(192, 10, 10);
-transition: 0.3s;
+    Background-color: white;
+    font-size: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 5px;
 `;
 
 export default Button 

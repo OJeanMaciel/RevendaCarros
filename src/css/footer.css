@@ -1,0 +1,42 @@
+.footer {
+    background-color: rgb(192, 10, 10);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.img {
+    background-color: rgb(192, 10, 10);
+    height: 60px;
+}
+
+.footer_list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: rgb(192, 10, 10);
+}
+
+.footer_item {
+    margin-right: 1em;
+    background-color: rgb(192, 10, 10);
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer_item_link {
+    background-color: rgb(192, 10, 10);
+    color: #fff;
+    text-decoration:none;
+}
+.footer_item_link p{
+    background-color: rgb(192, 10, 10);
+    font-size: 20px;
+}
+
+.footer_item a:hover {
+    color: 	#005b96;
+    text-decoration: none;
+}

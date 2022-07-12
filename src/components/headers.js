@@ -20,7 +20,7 @@ function Header() {
           </Link>
         </li>
         <li className='item'>
-          Telefone: 3632-6694
+          Telefone: (51) 997917286
         </li>
         </ul>
     </nav>
