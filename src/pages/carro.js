@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Headers from '../components/headers';
 import useForm from '../hooks/useForm';
 import FormField from '../components/FormField';
@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 import '../css/form.css';
 
 function Carro(){
-    const navigate = useNavigate ('/');
+    const navigation = useNavigate ();
     const date = new Date().toLocaleString();
     
     const { handleChange, values } = useForm({
@@ -33,8 +33,9 @@ function Carro(){
 
           <form onSubmit={(event) => {
             event.preventDefault();
-            alert('Carro Cadastrado com Sucesso!');
-  
+            alert('Carro Cadastrado com Sucesso!'); 
+            window.location = "/";
+            
             carrosRepository.create({
               marca_nome: values.marca_nome,
               nome_modelo: values.nome_modelo,
@@ -46,8 +47,7 @@ function Carro(){
               timestamp_cadastro: values.date,
             })
               .then(() => {
-                console.log('Cadastrou com Sucesso!');             
-                navigate.push('/');
+                console.log('Cadastrou com Sucesso!');
               });
           }}
           >
@@ -101,9 +101,9 @@ function Carro(){
           />
 
           <h1 className='container_form_h1'>
-            <Button className='form_control_button' type="submit">
-              Cadastrar
-            </Button>
+                <Button className='form_control_button' type="submit">
+                  Cadastrar
+                </Button>
           </h1>
           </form>
           <Footer />
